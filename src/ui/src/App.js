@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './App.css';
+
+// React-router-dom
+import { BrowserRouter, Routes, Route, UseNavigate, useNavigate } from "react-router-dom";
+
+import EmployeesList from './views/EmployeesList';
+import Homepage from './views/Homepage';
 
 function App() {
 
-  const [employees, setEmployees] = useState();
-
-  useEffect(() => {
-    axios.get('http://localhost:9000/employees')
-      .then(function (response) {
-      setEmployees(response.data);
-  })
-  }, [])
-
   return (
     <>
-      <h1>It works</h1>
-      <div>
-        <ul>
-          {employees && employees.map(employee => {
-            return ( 
-              <li>{employee.firstName}</li>
-            );
-          })}
-        </ul>
-      </div>
-      
+      <BrowserRouter>
+        <Routes>
+          <Route 
+            exact path='/'
+            element={<Homepage />}
+          />
+          <Route
+            exact path='/list'
+            element={<EmployeesList />}
+          />
+        </Routes>
+      </BrowserRouter>   
     </>
   );
 }

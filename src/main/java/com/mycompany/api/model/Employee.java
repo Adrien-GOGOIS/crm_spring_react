@@ -21,4 +21,11 @@ public class Employee {
     private String mail;
 
     private String password;
+
+    public void setData(Employee employee) {
+        this.firstName = employee.firstName;
+        this.lastName = employee.lastName;
+        this.mail = employee.mail;
+        this.password = employee.password;
+    }
 }
