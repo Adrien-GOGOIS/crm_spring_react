@@ -12,7 +12,6 @@ function Homepage() {
 
     return (
         <>
-            <Navbar />
         </>       
     )
 }

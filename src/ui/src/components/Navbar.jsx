@@ -5,9 +5,12 @@ import EmployeesList from "../views/EmployeesList";
 function Navbar() {
     return (
         <nav>
-            <ul>
-                <li>
+            <ul className="flex w-100 bg-red-200">
+                <li className="mx-5">
                     <Link to={"/list"}>Go to list</Link>
+                </li>
+                <li>
+                    <Link to={"/add"}>Create new employee</Link>
                 </li>
             </ul>
         </nav>

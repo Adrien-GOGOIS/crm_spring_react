@@ -6,12 +6,16 @@ import { BrowserRouter, Routes, Route, UseNavigate, useNavigate } from "react-ro
 
 import EmployeesList from './views/EmployeesList';
 import Homepage from './views/Homepage';
+import AddEmployee from './views/AddEmployee';
+import Navbar from './components/Navbar';
+import ModifyEmployee from './views/ModifyEmployee';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route 
             exact path='/'
@@ -20,6 +24,14 @@ function App() {
           <Route
             exact path='/list'
             element={<EmployeesList />}
+          />
+          <Route 
+            exact path='/add'
+            element={<AddEmployee />}
+          />
+          <Route 
+            path='/modify/:id'
+            element={<ModifyEmployee />}
           />
         </Routes>
       </BrowserRouter>   
