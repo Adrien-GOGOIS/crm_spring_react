@@ -7,8 +7,8 @@ function AddEmployeeForm() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const registerEmployee = data => {
         axios.post('http://localhost:9000/employee', {
-            first_name: data.firstName,
-            last_name: data.lastName,
+            firstName: data.firstName,
+            lastName: data.lastName,
             mail: data.email,
             password: data.password
         })
