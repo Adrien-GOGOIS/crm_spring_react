@@ -25,9 +25,6 @@ function ModifyEmployeeForm(props) {
             mail: data.email,
             password: data.password
         })
-        .then(function (response) {
-            console.log(response);
-        })
         .catch(function (error) {
             console.log(error);
         })

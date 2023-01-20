@@ -1,8 +1,11 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function AddEmployeeForm() {
+
+    const navigate = useNavigate();
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const registerEmployee = data => {
@@ -17,7 +20,10 @@ function AddEmployeeForm() {
         })
         .catch(function (error) {
             console.log(error);
-        });
+        })
+        .finally(() => {
+            navigate('/list');
+        })
     };
 
     return (
